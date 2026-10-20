@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Authentication System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="mic-icon">🎤</span>
+                <h1>Voice Authentication</h1>
+            </div>
+            <p class="subtitle">Secure Login with Voice Recognition</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Login/Authenticate Screen -->
+            <div id="authScreen" class="screen active">
+                <div class="form-container">
+                    <h2>Authenticate</h2>
+                    
+                    <div class="input-group">
+                        <label for="authUsername">Username:</label>
+                        <input type="text" id="authUsername" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="authPassphrase">Voice Passphrase:</label>
+                        <input type="password" id="authPassphrase" placeholder="Your passphrase hint" required>
+                    </div>
+
+                    <div class="voice-section">
+                        <button id="recordAuthBtn" class="btn btn-primary">
+                            <span class="mic-icon">🎤</span> Record Voice
+                        </button>
+                        <div id="recordingStatus" class="recording-status">Ready to record</div>
+                    </div>
+
+                    <button id="authenticateBtn" class="btn btn-success">
+                        Login
+                    </button>
+
+                    <div class="divider">OR</div>
+
+                    <button id="switchEnrollBtn" class="btn btn-secondary">
+                        Enroll New User
+                    </button>
+                </div>
+
+                <!-- Status Message -->
+                <div id="authMessage" class="message"></div>
+            </div>
+
+            <!-- Enrollment Screen -->
+            <div id="enrollScreen" class="screen">
+                <div class="form-container">
+                    <h2>Enroll New User</h2>
+                    
+                    <div class="input-group">
+                        <label for="enrollUsername">Username:</label>
+                        <input type="text" id="enrollUsername" placeholder="Create a username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="enrollPassphrase">Voice Passphrase:</label>
+                        <input type="password" id="enrollPassphrase" placeholder="Phrase to speak (e.g., 'hello security')" required>
+                    </div>
+
+                    <div class="voice-section">
+                        <p class="instruction">Please speak the passphrase <strong>3 times</strong></p>
+                        <button id="recordEnrollBtn" class="btn btn-primary">
+                            <span class="mic-icon">🎤</span> Record Voice
+                        </button>
+                        <div id="enrollRecordingStatus" class="recording-status">Ready to record</div>
+                        <div id="sampleCounter" class="sample-counter"></div>
+                    </div>
+
+                    <button id="enrollBtn" class="btn btn-success">
+                        Complete Enrollment
+                    </button>
+
+                    <button id="switchAuthBtn" class="btn btn-secondary">
+                        Back to Login
+                    </button>
+                </div>
+
+                <!-- Status Message -->
+                <div id="enrollMessage" class="message"></div>
+            </div>
+
+            <!-- Dashboard Screen -->
+            <div id="dashboardScreen" class="screen">
+                <div class="dashboard-container">
+                    <div class="welcome-message">
+                        <h2>Welcome, <span id="welcomeUsername"></span>! 🎉</h2>
+                        <p>You have successfully authenticated!</p>
+                    </div>
+
+                    <div class="dashboard-content">
+                        <div class="info-card">
+                            <h3>👤 User Information</h3>
+                            <p>Username: <strong id="dashUsername"></strong></p>
+                            <p>Status: <strong class="status-active">✅ Active</strong></p>
+                            <p>Last Login: <strong id="lastLogin"></strong></p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🔐 Security</h3>
+                            <p>Authentication Method: <strong>Voice Biometrics</strong></p>
+                            <p>Confidence Level: <strong id="confidenceLevel">95%</strong></p>
+                        </div>
+                    </div>
+
+                    <button id="logoutBtn" class="btn btn-danger">
+                        Logout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Panel Screen -->
+            <div id="adminScreen" class="screen">
+                <div class="admin-container">
+                    <h2>⚙️ Admin Panel</h2>
+
+                    <div class="admin-section">
+                        <h3>Unlock Account</h3>
+                        <div class="input-group">
+                            <label for="unlockUsername">Username:</label>
+                            <input type="text" id="unlockUsername" placeholder="Username to unlock">
+                        </div>
+                        <div class="input-group">
+                            <label for="adminPassword">Admin Password:</label>
+                            <input type="password" id="adminPassword" placeholder="Enter admin password">
+                        </div>
+                        <button id="unlockBtn" class="btn btn-warning">Unlock Account</button>
+                    </div>
+
+                    <div class="admin-section">
+                        <h3>Delete User</h3>
+                        <div class="input-group">
+                            <label for="deleteUsername">Username:</label>
+                            <input type="text" id="deleteUsername" placeholder="Username to delete">
+                        </div>
+                        <button id="deleteBtn" class="btn btn-danger">Delete User</button>
+                    </div>
+
+                    <button id="exitAdminBtn" class="btn btn-secondary">Exit Admin Panel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

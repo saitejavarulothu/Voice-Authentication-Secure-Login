@@ -1,0 +1,25 @@
+{
+    "sai": {
+        "passphrase": "sai",
+        "voice_profiles": [
+            {
+                "passphrase": "sai",
+                "signature": "2a7d37ba1a3fa3bf9a693933c146d12901895c6a83d29b920c98cb98e9ca1446",
+                "attempt": 1
+            },
+            {
+                "passphrase": "sai",
+                "signature": "2a7d37ba1a3fa3bf9a693933c146d12901895c6a83d29b920c98cb98e9ca1446",
+                "attempt": 1
+            },
+            {
+                "passphrase": "sai",
+                "signature": "2a7d37ba1a3fa3bf9a693933c146d12901895c6a83d29b920c98cb98e9ca1446",
+                "attempt": 1
+            }
+        ],
+        "status": "enrolled",
+        "attempts": 0,
+        "locked": false
+    }
+}
